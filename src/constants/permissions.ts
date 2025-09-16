@@ -1,0 +1,84 @@
+export const PERMISSIONS = {
+  // User management
+  USERS_READ: 'users:read',
+  USERS_CREATE: 'users:create',
+  USERS_UPDATE: 'users:update',
+  USERS_DELETE: 'users:delete',
+
+  // Agents management
+  AGENTS_READ: 'agents:read',
+  AGENTS_CREATE: 'agents:create',
+  AGENTS_UPDATE: 'agents:update',
+  AGENTS_DELETE: 'agents:delete',
+
+  // Analytics
+  ANALYTICS_READ: 'analytics:read',
+  ANALYTICS_EXPORT: 'analytics:export',
+
+  // Integrations
+  INTEGRATIONS_READ: 'integrations:read',
+  INTEGRATIONS_CREATE: 'integrations:create',
+  INTEGRATIONS_UPDATE: 'integrations:update',
+  INTEGRATIONS_DELETE: 'integrations:delete',
+
+  // Settings
+  SETTINGS_READ: 'settings:read',
+  SETTINGS_UPDATE: 'settings:update',
+
+  // Company management
+  COMPANY_READ: 'company:read',
+  COMPANY_UPDATE: 'company:update',
+} as const;
+
+export type Permission = typeof PERMISSIONS[keyof typeof PERMISSIONS];
+
+export const ROLES = {
+  SUPER_ADMIN: 'super_admin',
+  ADMIN: 'admin',
+  MANAGER: 'manager',
+  USER: 'user',
+} as const;
+
+export type Role = typeof ROLES[keyof typeof ROLES];
+
+export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
+  [ROLES.SUPER_ADMIN]: Object.values(PERMISSIONS),
+  [ROLES.ADMIN]: [
+    PERMISSIONS.USERS_READ,
+    PERMISSIONS.USERS_CREATE,
+    PERMISSIONS.USERS_UPDATE,
+    PERMISSIONS.AGENTS_READ,
+    PERMISSIONS.AGENTS_CREATE,
+    PERMISSIONS.AGENTS_UPDATE,
+    PERMISSIONS.AGENTS_DELETE,
+    PERMISSIONS.ANALYTICS_READ,
+    PERMISSIONS.ANALYTICS_EXPORT,
+    PERMISSIONS.INTEGRATIONS_READ,
+    PERMISSIONS.INTEGRATIONS_CREATE,
+    PERMISSIONS.INTEGRATIONS_UPDATE,
+    PERMISSIONS.INTEGRATIONS_DELETE,
+    PERMISSIONS.SETTINGS_READ,
+    PERMISSIONS.SETTINGS_UPDATE,
+    PERMISSIONS.COMPANY_READ,
+    PERMISSIONS.COMPANY_UPDATE,
+  ],
+  [ROLES.MANAGER]: [
+    PERMISSIONS.USERS_READ,
+    PERMISSIONS.AGENTS_READ,
+    PERMISSIONS.AGENTS_CREATE,
+    PERMISSIONS.AGENTS_UPDATE,
+    PERMISSIONS.ANALYTICS_READ,
+    PERMISSIONS.INTEGRATIONS_READ,
+    PERMISSIONS.INTEGRATIONS_CREATE,
+    PERMISSIONS.INTEGRATIONS_UPDATE,
+    PERMISSIONS.SETTINGS_READ,
+    PERMISSIONS.COMPANY_READ,
+  ],
+  [ROLES.USER]: [
+    PERMISSIONS.AGENTS_READ,
+    PERMISSIONS.ANALYTICS_READ,
+    PERMISSIONS.INTEGRATIONS_READ,
+    PERMISSIONS.SETTINGS_READ,
+    PERMISSIONS.COMPANY_READ,
+  ],
+};

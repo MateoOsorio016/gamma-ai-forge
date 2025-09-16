@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Moon, Sun, Settings, User, LogOut, Languages } from 'lucide-react';
+import { Moon, Sun, Settings, User, LogOut, Languages, Bell, Search } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +13,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Logo } from '@/components/ui/Logo';
 import { useAuth } from '@/hooks/useAuth';
 import { cn } from '@/lib/utils';
 
@@ -36,19 +36,28 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
 
   return (
     <header className={cn(
-      'sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60',
+      'sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl shadow-soft',
       className
     )}>
-      <div className="container flex h-14 items-center justify-between">
-        <Logo size="sm" />
+      <div className="flex h-16 items-center justify-between px-6">
+        {/* Search Bar */}
+        <div className="flex-1 max-w-md">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Buscar agentes, integraciones..."
+              className="pl-10 bg-background/50 border-border/50 focus:border-accent focus:ring-accent/20"
+            />
+          </div>
+        </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           {/* Language Toggle */}
           <Button
             variant="ghost"
             size="sm"
             onClick={toggleLanguage}
-            className="gap-2"
+            className="gap-2 hover:bg-accent/10"
           >
             <Languages className="h-4 w-4" />
             <span className="text-sm font-medium">
@@ -61,47 +70,65 @@ export const Header: React.FC<HeaderProps> = ({ className }) => {
             variant="ghost"
             size="sm"
             onClick={toggleTheme}
+            className="hover:bg-accent/10"
           >
             <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
+          </Button>
+
+          {/* Notifications */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="hover:bg-accent/10 relative"
+          >
+            <Bell className="h-4 w-4" />
+            <span className="absolute -top-1 -right-1 h-2 w-2 bg-accent rounded-full"></span>
           </Button>
 
           {/* User Menu */}
           {user && (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                <Button variant="ghost" className="relative h-9 w-9 rounded-full hover:bg-accent/10">
                   <Avatar className="h-8 w-8">
                     <AvatarImage src={user.avatar} alt={user.name} />
-                    <AvatarFallback className="bg-gamma-neon text-gamma-dark">
+                    <AvatarFallback className="bg-accent text-accent-foreground font-medium">
                       {user.name.charAt(0).toUpperCase()}
                     </AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="end" forceMount>
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">{user.name}</p>
-                    <p className="text-xs leading-none text-muted-foreground">
-                      {user.email}
-                    </p>
+              <DropdownMenuContent className="w-64" align="end" forceMount>
+                <DropdownMenuLabel className="font-normal p-4">
+                  <div className="flex items-center space-x-3">
+                    <Avatar className="h-10 w-10">
+                      <AvatarImage src={user.avatar} alt={user.name} />
+                      <AvatarFallback className="bg-accent text-accent-foreground font-medium">
+                        {user.name.charAt(0).toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col space-y-1">
+                      <p className="text-sm font-medium leading-none">{user.name}</p>
+                      <p className="text-xs leading-none text-muted-foreground">
+                        {user.email}
+                      </p>
+                    </div>
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
-                  <span>{t('profile')}</span>
+                <DropdownMenuItem className="cursor-pointer">
+                  <User className="mr-3 h-4 w-4" />
+                  <span>{t('profile', 'Perfil')}</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Settings className="mr-2 h-4 w-4" />
-                  <span>{t('settings')}</span>
+                <DropdownMenuItem className="cursor-pointer">
+                  <Settings className="mr-3 h-4 w-4" />
+                  <span>{t('settings', 'Configuración')}</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={logout}>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  <span>{t('logout')}</span>
+                <DropdownMenuItem onClick={logout} className="cursor-pointer text-destructive focus:text-destructive">
+                  <LogOut className="mr-3 h-4 w-4" />
+                  <span>{t('logout', 'Cerrar Sesión')}</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

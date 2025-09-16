@@ -1,0 +1,2 @@
+// Re-export the existing dialog component for the new structure
+export { Dialog as Modal, DialogContent as ModalContent, DialogHeader as ModalHeader, DialogTitle as ModalTitle, DialogDescription as ModalDescription, DialogFooter as ModalFooter, DialogTrigger as ModalTrigger } from '../dialog';
