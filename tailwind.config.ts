@@ -13,7 +13,18 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
       colors: {
+        // Gamma Brand Colors
+        gamma: {
+          dark: "hsl(var(--gamma-dark))",
+          neon: "hsl(var(--gamma-neon))",  
+          light: "hsl(var(--gamma-light))",
+        },
+        
+        // Semantic Colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -58,6 +69,17 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-accent": "var(--gradient-accent)",
+        "gradient-hero": "var(--gradient-hero)",
+      },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        medium: "var(--shadow-medium)",
+        strong: "var(--shadow-strong)",
+        neon: "var(--shadow-neon)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -65,25 +87,32 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-in": {
+          from: { opacity: "0", transform: "translateY(10px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
+        },
+        "pulse-neon": {
+          "0%, 100%": { boxShadow: "var(--shadow-neon)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--gamma-neon) / 0.6)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.5s ease-out",
+        "slide-in": "slide-in 0.3s ease-out",
+        "pulse-neon": "pulse-neon 2s ease-in-out infinite",
       },
     },
   },
