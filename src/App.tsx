@@ -9,6 +9,7 @@ import { AnalyticsPage } from "./pages/AnalyticsPage";
 import { IntegrationsPage } from "./pages/IntegrationsPage";
 import { UsersPage } from "./pages/UsersPage";
 import { SettingsPage } from "./pages/SettingsPage";
+import { CreateAgentPage } from "./pages/CreateAgentPage";
 import NotFound from "./pages/NotFound";
 import { ROUTES } from "./constants/routes";
 
@@ -21,6 +22,7 @@ const App = () => (
         <Route path={ROUTES.COMPANIES} element={<CompaniesPage />} />
         <Route path={ROUTES.DASHBOARD} element={<DashboardPage />} />
         <Route path={ROUTES.AGENTS} element={<AgentsPage />} />
+        <Route path="/agents/create" element={<CreateAgentPage />} />
         <Route path={ROUTES.ANALYTICS} element={<AnalyticsPage />} />
         <Route path={ROUTES.INTEGRATIONS} element={<IntegrationsPage />} />
         <Route path={ROUTES.USERS} element={<UsersPage />} />

@@ -54,6 +54,60 @@ const resources = {
       'theme.light': 'Claro',
       'theme.dark': 'Oscuro',
       'theme.system': 'Sistema',
+
+      // Agents
+      'agents.title': 'Agentes',
+      'agents.description': 'Gestiona tus agentes de inteligencia artificial',
+      'agents.create': 'Crear Agente',
+      'agents.edit': 'Editar Agente',
+      'agents.view_detail': 'Ver Detalle',
+      'agents.name': 'Nombre',
+      'agents.description_field': 'Descripción',
+      'agents.channel': 'Canal',
+      'agents.channel_type': 'Tipo de Canal',
+      'agents.language': 'Idioma',
+      'agents.tools_count': 'Número de Tools',
+      'agents.variables_count': 'Número de Variables',
+      
+      // Form tabs
+      'form.basic_info': 'Información Básica',
+      'form.advanced': 'Avanzado',
+      
+      // Channels
+      'channel.whatsapp': 'WhatsApp',
+      'channel.calls': 'Llamadas',
+      'channel_type.incoming': 'Entrante',
+      'channel_type.outgoing': 'Saliente',
+      
+      // Languages
+      'language.spanish': 'Español',
+      'language.english': 'Inglés',
+      
+      // Advanced fields
+      'agents.initial_message': 'Mensaje Inicial',
+      'agents.prompt': 'Prompt',
+      'agents.tools': 'Tools',
+      'agents.rag': 'RAG',
+      'agents.variables': 'Variables',
+      'agents.temperature': 'Temperatura',
+      'agents.stability': 'Estabilidad',
+      'agents.speed': 'Velocidad',
+      'agents.similarity': 'Similitud',
+      
+      // Actions
+      'actions.save': 'Guardar',
+      'actions.cancel': 'Cancelar',
+      'actions.add': 'Agregar',
+      'actions.create': 'Crear',
+      'actions.edit': 'Editar',
+      'actions.delete': 'Eliminar',
+      'actions.view': 'Ver',
+      'actions.search': 'Buscar',
+      
+      // Variables
+      'variables.detected': 'Variables Detectadas',
+      'variables.add_variable': 'Agregar Variable',
+      'variables.variable_name': 'Nombre de Variable',
     }
   },
   en: {
@@ -108,6 +162,60 @@ const resources = {
       'theme.light': 'Light',
       'theme.dark': 'Dark',
       'theme.system': 'System',
+
+      // Agents
+      'agents.title': 'Agents',
+      'agents.description': 'Manage your artificial intelligence agents',
+      'agents.create': 'Create Agent',
+      'agents.edit': 'Edit Agent',
+      'agents.view_detail': 'View Detail',
+      'agents.name': 'Name',
+      'agents.description_field': 'Description',
+      'agents.channel': 'Channel',
+      'agents.channel_type': 'Channel Type',
+      'agents.language': 'Language',
+      'agents.tools_count': 'Number of Tools',
+      'agents.variables_count': 'Number of Variables',
+      
+      // Form tabs
+      'form.basic_info': 'Basic Information',
+      'form.advanced': 'Advanced',
+      
+      // Channels
+      'channel.whatsapp': 'WhatsApp',
+      'channel.calls': 'Calls',
+      'channel_type.incoming': 'Incoming',
+      'channel_type.outgoing': 'Outgoing',
+      
+      // Languages
+      'language.spanish': 'Spanish',
+      'language.english': 'English',
+      
+      // Advanced fields
+      'agents.initial_message': 'Initial Message',
+      'agents.prompt': 'Prompt',
+      'agents.tools': 'Tools',
+      'agents.rag': 'RAG',
+      'agents.variables': 'Variables',
+      'agents.temperature': 'Temperature',
+      'agents.stability': 'Stability',
+      'agents.speed': 'Speed',
+      'agents.similarity': 'Similarity',
+      
+      // Actions
+      'actions.save': 'Save',
+      'actions.cancel': 'Cancel',
+      'actions.add': 'Add',
+      'actions.create': 'Create',
+      'actions.edit': 'Edit',
+      'actions.delete': 'Delete',
+      'actions.view': 'View',
+      'actions.search': 'Search',
+      
+      // Variables
+      'variables.detected': 'Detected Variables',
+      'variables.add_variable': 'Add Variable',
+      'variables.variable_name': 'Variable Name',
     }
   }
 };
