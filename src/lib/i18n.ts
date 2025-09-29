@@ -108,6 +108,22 @@ const resources = {
       'variables.detected': 'Variables Detectadas',
       'variables.add_variable': 'Agregar Variable',
       'variables.variable_name': 'Nombre de Variable',
+      
+      // Communications
+      'communications.title': 'Comunicaciones',
+      'communications.description': 'Gestiona todas las comunicaciones',
+      'communications.description_schedule': 'Comunicaciones de la programación #{{id}}',
+      'communications.table_title': 'Lista de Comunicaciones',
+      'communications.table_description': 'Vista de todas las comunicaciones registradas',
+      'communications.status': 'Estado',
+      'communications.active': 'Activo',
+      'communications.inactive': 'Inactivo',
+      'communications.agent_number': 'Número Agente',
+      'communications.duration': 'Duración',
+      'communications.type': 'Tipo',
+      'communications.type_incoming': 'Entrante',
+      'communications.type_outgoing': 'Saliente',
+      'communications.created_at': 'Fecha de Creación',
     }
   },
   en: {
@@ -216,6 +232,22 @@ const resources = {
       'variables.detected': 'Detected Variables',
       'variables.add_variable': 'Add Variable',
       'variables.variable_name': 'Variable Name',
+      
+      // Communications
+      'communications.title': 'Communications',
+      'communications.description': 'Manage all communications',
+      'communications.description_schedule': 'Communications for schedule #{{id}}',
+      'communications.table_title': 'Communications List',
+      'communications.table_description': 'View of all registered communications',
+      'communications.status': 'Status',
+      'communications.active': 'Active',
+      'communications.inactive': 'Inactive',
+      'communications.agent_number': 'Agent Number',
+      'communications.duration': 'Duration',
+      'communications.type': 'Type',
+      'communications.type_incoming': 'Incoming',
+      'communications.type_outgoing': 'Outgoing',
+      'communications.created_at': 'Created At',
     }
   }
 };
