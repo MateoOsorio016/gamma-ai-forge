@@ -124,6 +124,13 @@ const resources = {
       'communications.type_incoming': 'Entrante',
       'communications.type_outgoing': 'Saliente',
       'communications.created_at': 'Fecha de Creación',
+      
+      // Chat
+      'chat.search_conversations': 'Buscar conversaciones...',
+      'chat.type_message': 'Escribe un mensaje...',
+      'chat.assign': 'Asignar',
+      'chat.transfer': 'Derivar',
+      'chat.info': 'Información',
     }
   },
   en: {
@@ -248,6 +255,13 @@ const resources = {
       'communications.type_incoming': 'Incoming',
       'communications.type_outgoing': 'Outgoing',
       'communications.created_at': 'Created At',
+      
+      // Chat
+      'chat.search_conversations': 'Search conversations...',
+      'chat.type_message': 'Type a message...',
+      'chat.assign': 'Assign',
+      'chat.transfer': 'Transfer',
+      'chat.info': 'Information',
     }
   }
 };

@@ -12,6 +12,7 @@ export const ROUTES = {
   INTEGRATIONS: '/dashboard/integrations',
   USERS: '/dashboard/users',
   COMMUNICATIONS: '/dashboard/communications',
+  CHAT: '/dashboard/chat',
 } as const;
 
 export const PUBLIC_ROUTES = [
@@ -29,4 +30,5 @@ export const PROTECTED_ROUTES = [
   ROUTES.INTEGRATIONS,
   ROUTES.USERS,
   ROUTES.COMMUNICATIONS,
+  ROUTES.CHAT,
 ] as const;

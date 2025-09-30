@@ -11,6 +11,7 @@ import { UsersPage } from "./pages/UsersPage";
 import { SettingsPage } from "./pages/SettingsPage";
 import { CreateAgentPage } from "./pages/CreateAgentPage";
 import { CommunicationsPage } from "./pages/CommunicationsPage";
+import { ChatPage } from "./pages/ChatPage";
 import NotFound from "./pages/NotFound";
 import { ROUTES } from "./constants/routes";
 
@@ -29,6 +30,7 @@ const App = () => (
         <Route path={ROUTES.USERS} element={<UsersPage />} />
         <Route path={ROUTES.SETTINGS} element={<SettingsPage />} />
         <Route path={ROUTES.COMMUNICATIONS} element={<CommunicationsPage />} />
+        <Route path={ROUTES.CHAT} element={<ChatPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
