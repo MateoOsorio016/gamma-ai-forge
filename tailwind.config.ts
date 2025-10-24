@@ -106,41 +106,73 @@ export default {
           "0%, 100%": { boxShadow: "var(--shadow-neon)" },
           "50%": { boxShadow: "0 0 40px hsl(var(--gamma-neon) / 0.6)" },
         },
-        "fall-web": {
+        "spider-drop": {
           "0%": {
-            transform: "translateY(-100%) rotate(0deg)",
+            transform: "translateY(-100px)",
             opacity: "0",
           },
-          "10%": {
-            opacity: "0.8",
-          },
-          "100%": {
-            transform: "translateY(100vh) rotate(10deg)",
-            opacity: "0.3",
-          },
-        },
-        "fall-spider": {
-          "0%": {
-            transform: "translateY(-50px) rotate(0deg)",
-            opacity: "0",
-          },
-          "10%": {
+          "20%": {
             opacity: "1",
           },
+          "40%": {
+            transform: "translateY(0px)",
+          },
           "100%": {
-            transform: "translateY(100vh) rotate(360deg)",
-            opacity: "0.8",
+            transform: "translateY(0px)",
+            opacity: "1",
           },
         },
-        "swing": {
+        "spider-swing": {
           "0%, 100%": {
-            transform: "translateX(0px) rotate(0deg)",
+            transform: "rotate(-8deg)",
           },
-          "25%": {
-            transform: "translateX(-10px) rotate(-5deg)",
+          "50%": {
+            transform: "rotate(8deg)",
           },
-          "75%": {
-            transform: "translateX(10px) rotate(5deg)",
+        },
+        "witch-fly": {
+          "0%": {
+            transform: "translateX(-150%) translateY(50px) rotate(-15deg)",
+            opacity: "0",
+          },
+          "15%": {
+            opacity: "1",
+          },
+          "45%": {
+            transform: "translateX(50%) translateY(-20px) rotate(-5deg)",
+          },
+          "55%": {
+            transform: "translateX(50%) translateY(0px) rotate(0deg)",
+          },
+          "100%": {
+            transform: "translateX(50%) translateY(0px) rotate(0deg)",
+            opacity: "1",
+          },
+        },
+        "float-witch": {
+          "0%, 100%": {
+            transform: "translateY(0px) rotate(-2deg)",
+          },
+          "50%": {
+            transform: "translateY(-10px) rotate(2deg)",
+          },
+        },
+        "web-appear": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.8)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        "glow-pulse": {
+          "0%, 100%": {
+            filter: "drop-shadow(0 0 8px rgba(168, 85, 247, 0.4))",
+          },
+          "50%": {
+            filter: "drop-shadow(0 0 20px rgba(168, 85, 247, 0.8))",
           },
         },
       },
@@ -150,11 +182,12 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.3s ease-out",
         "pulse-neon": "pulse-neon 2s ease-in-out infinite",
-        "fall-web": "fall-web 8s ease-in infinite",
-        "fall-web-slow": "fall-web 12s ease-in infinite",
-        "fall-spider": "fall-spider 6s ease-in-out infinite",
-        "fall-spider-slow": "fall-spider 9s ease-in-out infinite",
-        "swing": "swing 3s ease-in-out infinite",
+        "spider-drop": "spider-drop 3s ease-out forwards",
+        "spider-swing": "spider-swing 4s ease-in-out infinite 3s",
+        "witch-fly": "witch-fly 4s ease-in-out forwards",
+        "float-witch": "float-witch 3s ease-in-out infinite 4s",
+        "web-appear": "web-appear 1s ease-out forwards",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
       },
     },
   },

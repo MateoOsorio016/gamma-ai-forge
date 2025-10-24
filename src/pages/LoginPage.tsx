@@ -61,49 +61,83 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-gamma-light/5 to-gamma-neon/10 flex items-center justify-center p-6 relative overflow-hidden">
-      {/* Halloween Animations - Cobwebs */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950/20 to-orange-950/30 flex items-center justify-center p-6 relative overflow-hidden">
+      {/* Halloween Decorative Cobwebs in Corners */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Telarañas cayendo */}
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={`web-${i}`}
-            className="absolute text-4xl opacity-30"
-            style={{
-              left: `${10 + i * 15}%`,
-              animationDelay: `${i * 2}s`,
-              filter: 'drop-shadow(0 0 8px rgba(139, 92, 246, 0.3))',
-            }}
-          >
-            <div className={i % 2 === 0 ? "animate-fall-web" : "animate-fall-web-slow"}>
-              🕸️
-            </div>
-          </div>
-        ))}
+        {/* Top Left Web */}
+        <div className="absolute top-0 left-0 text-9xl opacity-20 animate-web-appear" style={{ filter: 'drop-shadow(0 0 12px rgba(168, 85, 247, 0.5))' }}>
+          🕸️
+        </div>
+        {/* Top Right Web */}
+        <div className="absolute top-0 right-0 text-9xl opacity-20 animate-web-appear" style={{ animationDelay: '0.3s', filter: 'drop-shadow(0 0 12px rgba(168, 85, 247, 0.5))' }}>
+          🕸️
+        </div>
+        {/* Bottom Left Web */}
+        <div className="absolute bottom-0 left-0 text-8xl opacity-15 animate-web-appear" style={{ animationDelay: '0.6s', filter: 'drop-shadow(0 0 10px rgba(168, 85, 247, 0.4))' }}>
+          🕸️
+        </div>
+        {/* Bottom Right Web */}
+        <div className="absolute bottom-0 right-0 text-8xl opacity-15 animate-web-appear" style={{ animationDelay: '0.9s', filter: 'drop-shadow(0 0 10px rgba(168, 85, 247, 0.4))' }}>
+          🕸️
+        </div>
         
-        {/* Arañas cayendo con balanceo */}
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={`spider-${i}`}
-            className="absolute"
-            style={{
-              left: `${15 + i * 18}%`,
-              animationDelay: `${i * 1.5}s`,
-            }}
-          >
-            <div className={i % 2 === 0 ? "animate-fall-spider" : "animate-fall-spider-slow"}>
-              <div className="animate-swing text-2xl opacity-70" style={{ filter: 'drop-shadow(0 0 6px rgba(139, 92, 246, 0.4))' }}>
-                🕷️
-              </div>
+        {/* Hanging Spider with Thread */}
+        <div className="absolute top-0 right-1/4">
+          {/* Spider Thread */}
+          <div className="w-0.5 h-48 bg-gradient-to-b from-purple-200/40 to-purple-300/60 animate-spider-drop" style={{ filter: 'drop-shadow(0 0 4px rgba(168, 85, 247, 0.6))' }}></div>
+          {/* Spider hanging and swinging */}
+          <div className="absolute top-48 left-1/2 -translate-x-1/2 text-5xl animate-spider-drop origin-top">
+            <div className="animate-spider-swing origin-top" style={{ filter: 'drop-shadow(0 0 10px rgba(168, 85, 247, 0.7))' }}>
+              🕷️
             </div>
           </div>
+        </div>
+
+        {/* Flying Witch that lands on card */}
+        <div className="absolute top-8 left-0 text-6xl animate-witch-fly z-20">
+          <div className="animate-float-witch" style={{ filter: 'drop-shadow(0 0 15px rgba(249, 115, 22, 0.6))' }}>
+            🧙‍♀️
+          </div>
+        </div>
+
+        {/* Floating Purple Particles */}
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={`particle-${i}`}
+            className="absolute rounded-full bg-purple-500/30 animate-glow-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${4 + Math.random() * 8}px`,
+              height: `${4 + Math.random() * 8}px`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`,
+            }}
+          />
+        ))}
+
+        {/* Floating Orange Particles */}
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={`particle-orange-${i}`}
+            className="absolute rounded-full bg-orange-500/25 animate-glow-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${3 + Math.random() * 6}px`,
+              height: `${3 + Math.random() * 6}px`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2.5 + Math.random() * 2}s`,
+            }}
+          />
         ))}
       </div>
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       {/* Back Button */}
@@ -131,14 +165,18 @@ export const LoginPage: React.FC = () => {
         </div>
 
         {/* Login Form */}
-        <Card className="border-0 bg-card/80 backdrop-blur-xl shadow-strong">
-          <CardHeader className="space-y-1 pb-4">
-            <CardTitle className="text-2xl font-bold text-center text-primary">
+        <Card className="border-2 border-purple-500/30 bg-slate-900/90 backdrop-blur-xl shadow-[0_0_50px_rgba(168,85,247,0.3)] relative overflow-hidden">
+          {/* Card Halloween Glow Effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 via-transparent to-orange-600/5 pointer-events-none"></div>
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <CardHeader className="space-y-1 pb-4 relative z-10">
+            <CardTitle className="text-2xl font-bold text-center bg-gradient-to-r from-purple-400 to-orange-400 bg-clip-text text-transparent">
               {t('login.title', 'Iniciar Sesión')}
             </CardTitle>
           </CardHeader>
           
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 relative z-10">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Email Field */}
               <div className="space-y-2">
@@ -220,11 +258,11 @@ export const LoginPage: React.FC = () => {
               {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full h-12 bg-gradient-to-r from-gamma-dark to-gamma-dark/90 hover:from-gamma-dark/90 hover:to-gamma-dark/80 text-white font-medium transition-all duration-300"
+                className="w-full h-12 bg-gradient-to-r from-purple-600 to-orange-600 hover:from-purple-700 hover:to-orange-700 text-white font-medium transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
                 disabled={isLoading}
               >
                 {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {isLoading ? 'Accediendo...' : t('login.submit', 'Iniciar Sesión')}
+                {isLoading ? '🎃 Accediendo...' : `🎃 ${t('login.submit', 'Iniciar Sesión')}`}
               </Button>
             </form>
 
@@ -241,16 +279,16 @@ export const LoginPage: React.FC = () => {
             </div>
 
             {/* Demo Credentials */}
-            <Card className="bg-accent/5 border border-accent/20">
+            <Card className="bg-purple-950/50 border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
               <CardContent className="p-4">
                 <div className="text-center space-y-2">
-                  <h4 className="text-sm font-medium text-accent">Credenciales de Demo</h4>
-                  <p className="text-xs text-muted-foreground">
+                  <h4 className="text-sm font-medium text-purple-300">🎃 Credenciales de Demo</h4>
+                  <p className="text-xs text-purple-200/70">
                     Usa cualquier email válido y contraseña para acceder al sistema
                   </p>
-                  <div className="text-xs text-accent/80 space-y-1">
-                    <div>📧 demo@gamma.ai</div>
-                    <div>🔑 password123</div>
+                  <div className="text-xs text-purple-300/90 space-y-1">
+                    <div>👻 demo@gamma.ai</div>
+                    <div>🦇 password123</div>
                   </div>
                 </div>
               </CardContent>
