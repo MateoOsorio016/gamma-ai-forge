@@ -106,6 +106,43 @@ export default {
           "0%, 100%": { boxShadow: "var(--shadow-neon)" },
           "50%": { boxShadow: "0 0 40px hsl(var(--gamma-neon) / 0.6)" },
         },
+        "fall-web": {
+          "0%": {
+            transform: "translateY(-100%) rotate(0deg)",
+            opacity: "0",
+          },
+          "10%": {
+            opacity: "0.8",
+          },
+          "100%": {
+            transform: "translateY(100vh) rotate(10deg)",
+            opacity: "0.3",
+          },
+        },
+        "fall-spider": {
+          "0%": {
+            transform: "translateY(-50px) rotate(0deg)",
+            opacity: "0",
+          },
+          "10%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateY(100vh) rotate(360deg)",
+            opacity: "0.8",
+          },
+        },
+        "swing": {
+          "0%, 100%": {
+            transform: "translateX(0px) rotate(0deg)",
+          },
+          "25%": {
+            transform: "translateX(-10px) rotate(-5deg)",
+          },
+          "75%": {
+            transform: "translateX(10px) rotate(5deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -113,6 +150,11 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-in": "slide-in 0.3s ease-out",
         "pulse-neon": "pulse-neon 2s ease-in-out infinite",
+        "fall-web": "fall-web 8s ease-in infinite",
+        "fall-web-slow": "fall-web 12s ease-in infinite",
+        "fall-spider": "fall-spider 6s ease-in-out infinite",
+        "fall-spider-slow": "fall-spider 9s ease-in-out infinite",
+        "swing": "swing 3s ease-in-out infinite",
       },
     },
   },

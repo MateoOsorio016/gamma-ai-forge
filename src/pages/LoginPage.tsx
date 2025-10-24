@@ -62,6 +62,44 @@ export const LoginPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-gamma-light/5 to-gamma-neon/10 flex items-center justify-center p-6 relative overflow-hidden">
+      {/* Halloween Animations - Cobwebs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Telarañas cayendo */}
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={`web-${i}`}
+            className="absolute text-4xl opacity-30"
+            style={{
+              left: `${10 + i * 15}%`,
+              animationDelay: `${i * 2}s`,
+              filter: 'drop-shadow(0 0 8px rgba(139, 92, 246, 0.3))',
+            }}
+          >
+            <div className={i % 2 === 0 ? "animate-fall-web" : "animate-fall-web-slow"}>
+              🕸️
+            </div>
+          </div>
+        ))}
+        
+        {/* Arañas cayendo con balanceo */}
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={`spider-${i}`}
+            className="absolute"
+            style={{
+              left: `${15 + i * 18}%`,
+              animationDelay: `${i * 1.5}s`,
+            }}
+          >
+            <div className={i % 2 === 0 ? "animate-fall-spider" : "animate-fall-spider-slow"}>
+              <div className="animate-swing text-2xl opacity-70" style={{ filter: 'drop-shadow(0 0 6px rgba(139, 92, 246, 0.4))' }}>
+                🕷️
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
